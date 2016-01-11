@@ -1,0 +1,25 @@
+From 9b586fa0ae41cbf36e1043e6a5879d1bbc9e0ff6 Mon Sep 17 00:00:00 2001
+From: Corentin Henry <corentinhenry@gmail.com>
+Date: Mon, 11 Jan 2016 15:04:23 +0000
+Subject: [PATCH] add CFLAGS to gcc options
+
+---
+ Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index 5cccbdd..5b70092 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -9,7 +9,7 @@
+ CC= gcc
+ AR=/usr/bin/ar
+ RANLIB=/usr/bin/ranlib
+-CCOPT= -O2 -Wall @PCAP_INCLUDE@ @TCL_INC@ @USE_TCL@
++CCOPT= $(CFLAGS) -O2 -Wall @PCAP_INCLUDE@ @TCL_INC@ @USE_TCL@
+ DEBUG= -g
+ #uncomment the following if you need libpcap based build under linux
+ #(not raccomanded)
+-- 
+2.7.0
+

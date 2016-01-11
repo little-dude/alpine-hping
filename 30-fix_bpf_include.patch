@@ -1,0 +1,37 @@
+From 73d4684bd0bbb1fbc82a290bcb742d76d0224647 Mon Sep 17 00:00:00 2001
+From: Corentin Henry <corentinhenry@gmail.com>
+Date: Mon, 11 Jan 2016 15:07:30 +0000
+Subject: [PATCH] fix bpf include
+
+---
+ libpcap_stuff.c | 1 -
+ script.c        | 1 -
+ 2 files changed, 2 deletions(-)
+
+diff --git a/libpcap_stuff.c b/libpcap_stuff.c
+index 26f9993..07ea1e6 100644
+--- a/libpcap_stuff.c
++++ b/libpcap_stuff.c
+@@ -16,7 +16,6 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+-#include <net/bpf.h>
+ #include <pcap.h>
+ 
+ #include "globals.h"
+diff --git a/script.c b/script.c
+index 124370c..b2a328b 100644
+--- a/script.c
++++ b/script.c
+@@ -23,7 +23,6 @@
+ #include <sched.h>
+ 
+ #include <sys/ioctl.h>
+-#include <net/bpf.h>
+ #include <pcap.h>
+ 
+ #include "release.h"
+-- 
+2.7.0
+
